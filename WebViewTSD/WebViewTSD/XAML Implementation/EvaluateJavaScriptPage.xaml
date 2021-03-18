@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WebViewSample.EvaluateJavaScriptPage" Title="Настройки">
+    <StackLayout Margin="20">
+        <Label Text="Параметры приложения" FontAttributes="Bold" HorizontalOptions="Center" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Сервер: " />
+            <Entry x:Name="_numberEntry" Text="\\ts-tsd\tsd\" WidthRequest="240" />
+        </StackLayout>
+        <Button x:Name="_callJavaScriptButton" Text="Сохранить" Clicked="OnCallJavaScriptButtonClicked" />
+        <Label x:Name="_resultLabel" />
+        <WebView x:Name="_webView" />
+    </StackLayout>
+</ContentPage>
