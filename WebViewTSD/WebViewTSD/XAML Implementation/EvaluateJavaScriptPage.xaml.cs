@@ -3,6 +3,7 @@ using System.IO;
 using System.Reflection;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.CommunityToolkit.Extensions;
 
 namespace WebViewSample
 {   
@@ -57,6 +58,8 @@ namespace WebViewSample
             Preferences.Set("ScannerLogin", Login);
             Params.ScannerLogin = Login;
 
+            //Чтобы проинформировать пользователя о том, что всё нажатие на кнопку программа обрабатывает 
+            this.DisplayToastAsync("Сохранение...", 2000);
             //string result = await _webView.EvaluateJavaScriptAsync($"factorial({number})");
             //_resultLabel.Text = $"Factorial of {number} is {result}.";
             }
