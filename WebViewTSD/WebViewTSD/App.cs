@@ -13,8 +13,9 @@ namespace WebViewSample
 			var navPage = new NavigationPage { Title="Меню" };
 			tabs.Children.Add (navPage);
 
-			bool useXaml = true; //change this to use the code implementation
-
+			bool useXaml = true; //Не будем использовать вариант без Xaml
+            
+            //Странички навигации
 			if (useXaml) 
             {				
 				navPage.PushAsync (new LinkToInAppXaml ());
@@ -33,7 +34,8 @@ namespace WebViewSample
         protected override void OnStart()
         {
             // Handle when your app starts
-        }
+            App.Current.MainPage.DisplayAlert("Добро пожаловать!", "Вы запустили приложение для сканирование марок.", "ОK");
+            }
 
         protected override void OnSleep()
         {

@@ -12,12 +12,15 @@ namespace WebViewSample
         {
             InitializeComponent();
 
+            //Загружаем параметры - настройки приложения
             if (Params.CurrentServer == "")
                 {
                     Params.CurrentServer = Preferences.Get("CurrentServer", "http://ts-tsd/tsd/");
-                    _numberEntry.Text = Params.CurrentServer;
+                    _ServerPathEntry.Text = Params.CurrentServer;
                 }
-            
+            Params.ScannerLogin = Preferences.Get("ScannerLogin", "");
+            _Login.Text = Params.ScannerLogin;
+
             _webView.Source = LoadHTMLFileFromResource();
         }
 
@@ -40,16 +43,19 @@ namespace WebViewSample
             return source;
         }
 
-        void OnCallJavaScriptButtonClicked(object sender, EventArgs e)
+        void OnSaveParamsClicked(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(_numberEntry.Text))
+            if (string.IsNullOrWhiteSpace(_ServerPathEntry.Text))
             {
                 return;
             }
 
-            string ServerPath = _numberEntry.Text;
+            string ServerPath = _ServerPathEntry.Text;
+            string Login = _Login.Text;
             Preferences.Set("CurrentServer", ServerPath);
             Params.CurrentServer = ServerPath;
+            Preferences.Set("ScannerLogin", Login);
+            Params.ScannerLogin = Login;
 
             //string result = await _webView.EvaluateJavaScriptAsync($"factorial({number})");
             //_resultLabel.Text = $"Factorial of {number} is {result}.";

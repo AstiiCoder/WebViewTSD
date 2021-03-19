@@ -4,9 +4,13 @@
         <Label Text="Параметры приложения" FontAttributes="Bold" HorizontalOptions="Center" />
         <StackLayout Orientation="Horizontal">
             <Label Text="Сервер: " />
-            <Entry x:Name="_numberEntry" Text="\\ts-tsd\tsd\" WidthRequest="240" />
+            <Entry x:Name="_ServerPathEntry" Text="\\ts-tsd\tsd\" WidthRequest="200" />
         </StackLayout>
-        <Button x:Name="_callJavaScriptButton" Text="Сохранить" Clicked="OnCallJavaScriptButtonClicked" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Логин: " />
+            <Entry x:Name="_Login" Text="b01" WidthRequest="200" />
+        </StackLayout>
+        <Button x:Name="_callSaveParamsButton" Text="Сохранить" Clicked="OnSaveParamsClicked" />
         <Label x:Name="_resultLabel" />
         <WebView x:Name="_webView" />
     </StackLayout>

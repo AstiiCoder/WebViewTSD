@@ -2,6 +2,8 @@
 
 using Xamarin.Forms;
 
+// ВНИМАНИЕ: НЕ ИСПОЛЬЗУЕМ ЭТОТ РЕЖИМ ##########################################################################################################################
+
 namespace WebViewSample
 {
 	public class LinkToInAppCode : ContentPage
