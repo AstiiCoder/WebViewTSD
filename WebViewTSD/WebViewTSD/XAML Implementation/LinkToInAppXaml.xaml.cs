@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -19,9 +20,9 @@ namespace WebViewSample
 		/// <param name="e">E.</param>
 		async void navButtonClicked(object sender, EventArgs e)
 		{
-            //await Navigation.PushAsync (new InAppBrowserXaml ("https://dotnet.microsoft.com/apps/xamarin"));
-            //await Navigation.PushAsync(new InAppBrowserXaml("http://10.0.2.2/FoxWebApp2/ListNakls.htm"));
-            if (Params.CurrentServer == "")
+			//await Navigation.PushAsync (new InAppBrowserXaml ("https://dotnet.microsoft.com/apps/xamarin"));
+			//await Navigation.PushAsync(new InAppBrowserXaml("http://10.0.2.2/FoxWebApp2/ListNakls.htm"));
+			if (Params.CurrentServer == "")
                 {
 				Params.CurrentServer = Preferences.Get("CurrentServer", "http://ts-tsd/tsd");
                 }
@@ -30,7 +31,7 @@ namespace WebViewSample
 			//Определяемся: что открываем изначально
 			string IndexHtml = Path.Combine(Params.CurrentServer, "ListNakls.htm");
             await Navigation.PushAsync(new InAppBrowserXaml(IndexHtml));
-            }
+           }
 	}
 }
 

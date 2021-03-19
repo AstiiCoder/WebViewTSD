@@ -11,6 +11,8 @@
             <Entry x:Name="_Login" Text="b01" WidthRequest="200" />
         </StackLayout>
         <Button x:Name="_callSaveParamsButton" Text="Сохранить" Clicked="OnSaveParamsClicked" />
+        <Label Text="Сетевое окружение" FontAttributes="Bold" HorizontalOptions="Center" />
+        <Button x:Name="_callTestConnectivityButton" Text="Проверить соединение" Clicked="TestConnectivity" />
         <Label x:Name="_resultLabel" />
         <WebView x:Name="_webView" />
     </StackLayout>
