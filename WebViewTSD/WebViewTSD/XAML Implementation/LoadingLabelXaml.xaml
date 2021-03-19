@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="WebViewSample.LoadingLabelXaml"
-             Title="Справка">
+             Title="Помощь">
 	<StackLayout>
 		<!--Loading label should not render by default.-->
 		<Label x:Name="labelLoading" Text="Loading..." IsVisible="false" />

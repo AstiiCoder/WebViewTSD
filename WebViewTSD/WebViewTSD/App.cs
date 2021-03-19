@@ -10,7 +10,7 @@ namespace WebViewSample
         public App()
         {
 			var tabs = new TabbedPage ();
-			var navPage = new NavigationPage { Title="Меню" };
+			var navPage = new NavigationPage { Title="Сканирование" };
 			tabs.Children.Add (navPage);
 
 			bool useXaml = true; //Не будем использовать вариант без Xaml
