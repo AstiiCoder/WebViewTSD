@@ -1,0 +1,50 @@
+﻿^contentpage {
+    background-color: dodgerblue;
+}
+
+stacklayout {
+    margin: 15;
+    padding: 10;
+}
+
+label {
+    color: white;   
+}
+
+.labelHeader {
+    color: white;
+    font-size: 32;
+}
+
+stacklayout button {
+    background-color: #f29933;
+    color: white;
+    border-radius: 6;
+}
+
+stacklayout .buttonParam {
+    background-color: #f29933;
+    border-radius: 6;
+    padding: 3;
+    font-size: 10;
+    height: 26;
+} 
+
+#header {
+    font-size: 32;
+    font-weight: bold;
+}
+
+.english {
+    font-weight: bold;
+    font-size: large;
+    color: #f29933;
+}
+
+.russian {
+    font-size: medium;
+}
+
+stacklayout label {
+    font-family: Verdana;
+}

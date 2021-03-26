@@ -14,10 +14,15 @@ namespace WebViewSample.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
+            //Это там где часы, WiFi и пр. - самый верх
+            Window.SetStatusBarColor(Android.Graphics.Color.DodgerBlue);
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+
+            
+
         }
     }
 }

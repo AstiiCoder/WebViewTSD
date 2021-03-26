@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WebViewSample.LoginPage">
+    <ContentPage.Resources>
+        <StyleSheet Source="/Styles.css" />
+    </ContentPage.Resources>
+    <NavigationPage.TitleView>
+        <Label Text="Авторизация" StyleClass="labelHeader" HorizontalOptions="Center"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Логин" />
+            <Entry x:Name="usernameEntry" Placeholder="имя пользователя" />
+            <Label Text="Пароль" />
+            <Entry x:Name="passwordEntry" IsPassword="true" />
+            <Button x:Name="LoginButton" Text="Войти" Clicked="OnLoginButtonClicked" />
+            <Label x:Name="messageLabel" />
+            <StackLayout Margin="100,100,0,0" HorizontalOptions="End" VerticalOptions="End">
+                <Button Text="Настройки" HorizontalOptions="End" Clicked="OnLoginButtonClicked" StyleClass="buttonParam" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

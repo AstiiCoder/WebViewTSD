@@ -10,5 +10,6 @@ namespace WebViewSample
         public static string CurrentServer = "";
         public static string ScannerLogin = "";
         public static string Page = "";
+        public static bool IsUserLoggedIn = false;
         }
     }

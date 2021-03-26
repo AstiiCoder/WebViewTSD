@@ -33,7 +33,7 @@ namespace WebViewSample
 				IndexHtml = "http://10.0.2.2/FoxWebApp2/ListNakls.htm";
             //Непосредствеено, переход к странице
 			await Navigation.PushAsync(new InAppBrowserXaml(IndexHtml));
-           }
+			}
 	}
 }
 
