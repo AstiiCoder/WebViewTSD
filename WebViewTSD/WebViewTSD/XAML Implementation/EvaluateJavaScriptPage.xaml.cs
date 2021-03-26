@@ -22,6 +22,8 @@ namespace WebViewSample
                 }
             Params.ScannerLogin = Preferences.Get("ScannerLogin", "");
             _Login.Text = Params.ScannerLogin;
+            Params.Page = Preferences.Get("Page", "");
+            _PageEntry.Text = Params.Page;
 
             _webView.Source = LoadHTMLFileFromResource();
         }
@@ -54,10 +56,14 @@ namespace WebViewSample
 
             string ServerPath = _ServerPathEntry.Text;
             string Login = _Login.Text;
+            string Page = _PageEntry.Text; 
+
             Preferences.Set("CurrentServer", ServerPath);
             Params.CurrentServer = ServerPath;
             Preferences.Set("ScannerLogin", Login);
             Params.ScannerLogin = Login;
+            Preferences.Set("Page", Page);
+            Params.Page = Page;
 
             //Чтобы проинформировать пользователя о том, что всё нажатие на кнопку программа обрабатывает 
             this.DisplayToastAsync("Сохранение...", 2000);

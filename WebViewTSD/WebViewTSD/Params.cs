@@ -9,5 +9,6 @@ namespace WebViewSample
         public static string FolderPath = "";
         public static string CurrentServer = "";
         public static string ScannerLogin = "";
+        public static string Page = "";
         }
     }

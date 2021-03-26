@@ -26,11 +26,13 @@ namespace WebViewSample
                 {
 				Params.CurrentServer = Preferences.Get("CurrentServer", "http://ts-tsd/tsd");
                 }
-			//Для тестов
-			//Params.CurrentServer = "http://10.0.2.2/FoxWebApp2";
 			//Определяемся: что открываем изначально
-			string IndexHtml = Path.Combine(Params.CurrentServer, "ListNakls.htm");
-            await Navigation.PushAsync(new InAppBrowserXaml(IndexHtml));
+			string IndexHtml = Path.Combine(Params.CurrentServer, Params.Page);
+			//Для тестов
+			if ((Params.FolderPath == String.Empty) && (Params.Page == String.Empty))
+				IndexHtml = "http://10.0.2.2/FoxWebApp2/ListNakls.htm";
+            //Непосредствеено, переход к странице
+			await Navigation.PushAsync(new InAppBrowserXaml(IndexHtml));
            }
 	}
 }
