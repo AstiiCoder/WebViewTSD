@@ -9,16 +9,20 @@
         <Label Text="Авторизация" StyleClass="labelHeader" HorizontalOptions="Center"/>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout IsClippedToBounds="True" InputTransparent="False" Scale="1" Padding="0,-10,0,0" >
+            <StackLayout HorizontalOptions="Center" Grid.Row="1"  >
+                <Image Source="fox.png" HorizontalOptions="Start" VerticalOptions="End"  >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnImgClick" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
             <Label Text="Логин" />
             <Entry x:Name="usernameEntry" Placeholder="имя пользователя" />
             <Label Text="Пароль" />
             <Entry x:Name="passwordEntry" IsPassword="true" />
             <Button x:Name="LoginButton" Text="Войти" Clicked="OnLoginButtonClicked" />
             <Label x:Name="messageLabel" />
-            <StackLayout Margin="100,100,0,0" HorizontalOptions="End" VerticalOptions="End">
-                <Button Text="Настройки" HorizontalOptions="End" Clicked="OnLoginButtonClicked" StyleClass="buttonParam" />
-            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

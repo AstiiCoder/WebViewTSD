@@ -8,8 +8,22 @@ namespace WebViewSample
 {
 	public partial class LinkToInAppXaml : ContentPage
 	{
+		public interface IStatusBar
+			{
+			/// <summary>
+			/// Hide
+			/// </summary>
+			void HideStatusBar();
+
+			/// <summary>
+			/// Show
+			/// </summary>
+			void ShowStatusBar();
+			}
+
 		public LinkToInAppXaml ()
-		{
+		{			
+			//DependencyService.Get<IStatusBar>().HideStatusBar();
 			InitializeComponent ();
 		}
 
