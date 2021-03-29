@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Android.OS;
+using System;
 using System.IO;
 using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Essentials;
@@ -7,7 +8,7 @@ using Xamarin.Forms;
 namespace WebViewSample
 {
 	public partial class LinkToInAppXaml : ContentPage
-	{
+	{		
 		public interface IStatusBar
 			{
 			/// <summary>
@@ -43,8 +44,8 @@ namespace WebViewSample
 			//Определяемся: что открываем изначально
 			string IndexHtml = Path.Combine(Params.CurrentServer, Params.Page);
 			//Для тестов
-			if ((Params.FolderPath == String.Empty) && (Params.Page == String.Empty))
-				IndexHtml = "http://10.0.2.2/FoxWebApp2/ListNakls.htm";
+			//if ((Params.FolderPath == String.Empty) && (Params.Page == String.Empty))
+				//IndexHtml = "http://10.0.2.2/FoxWebApp2/ListNakls.htm";
             //Непосредствеено, переход к странице
 			await Navigation.PushAsync(new InAppBrowserXaml(IndexHtml));
 			}

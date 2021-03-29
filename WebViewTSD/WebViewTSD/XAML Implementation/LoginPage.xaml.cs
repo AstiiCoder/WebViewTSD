@@ -7,13 +7,14 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace WebViewSample
 
-	{
+namespace WebViewSample
+	{	
 	//[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginPage : ContentPage
 		{
@@ -41,29 +42,49 @@ namespace WebViewSample
 			string IndexHtml = Path.Combine(Params.CurrentServer, LoginAPI);
 			//Для тестов
 			//if ((Params.FolderPath == String.Empty) && (Params.Page == String.Empty))
-			IndexHtml = "http://10.0.2.2/FoxWebApp2/api_login.htm";
-			HttpResponseMessage response = await client.GetAsync(IndexHtml);
+			//IndexHtml = "http://10.0.2.2/FoxWebApp2/api_login.htm";
+			HttpResponseMessage response;
+			try
+                {
+				response = await client.GetAsync(IndexHtml);
+                }
+            catch (Exception)
+                {
+				messageLabel.Text = "Сервер недоступен!";
+				return;
+                }
+			
 			if (response.StatusCode == HttpStatusCode.OK)
 				{
-				HttpContent responseContent = response.Content;
-				var json = await responseContent.ReadAsStringAsync();
-				if (json.ToString() == "\"1\"")
+                HttpContent responseContent = response.Content;
+                try
                     {
-					Params.IsUserLoggedIn = true;
-					isValid = true;
-                    }					
-				else if (json.ToString() == "\"0\"")
-					{
-					messageLabel.Text = "Нет доступа";
-					passwordEntry.Text = string.Empty;
-					await Task.Delay(2000);
+                    var json = await responseContent.ReadAsStringAsync();
+                    if (json.ToString() == "\"1\"")
+                        {
+                        Params.IsUserLoggedIn = true;
+                        isValid = true;
+                        }
+                    else if (json.ToString() == "\"0\"")
+                        {
+                        messageLabel.Text = "Нет доступа";
+                        passwordEntry.Text = string.Empty;
+                        await Task.Delay(2000);
+                        }
+                    else
+                        messageLabel.Text = "Неопределённый ответ " + json.ToString();
+                    }
+                catch (Exception)
+                    {
+						messageLabel.Text = "Ресурс недоступен!";
+					    return;
 					}
-				else
-					messageLabel.Text = "Неопределённый ответ " + json.ToString();
-				}
 
-			//var isValid = AreCredentialsCorrect(user);
-			if (isValid)
+
+                }
+
+            //var isValid = AreCredentialsCorrect(user);
+            if (isValid)
 				{
 				messageLabel.Text = "";
 				var tabs = new TabbedPage();
@@ -87,13 +108,15 @@ namespace WebViewSample
 
 				//Application.MainPage = tabs;
 				Params.IsUserLoggedIn = true;
-				Navigation.InsertPageBefore(tabs, this);	
+				Navigation.InsertPageBefore(tabs, this);
 				await Navigation.PopAsync();				
 				}
 			else
 				{
 				messageLabel.Text = "Неправильный логин/пароль";
 				passwordEntry.Text = string.Empty;
+				//Чтобы проинформировать ещё и динамическим сообщением
+				this.DisplayToastAsync("Неправильный логин/пароль", 2000);
 				}
 			}
 

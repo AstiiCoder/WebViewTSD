@@ -9,9 +9,9 @@
         <Label Text="Авторизация" StyleClass="labelHeader" HorizontalOptions="Center"/>
     </NavigationPage.TitleView> 
     <ContentPage.Content>
-        <StackLayout IsClippedToBounds="True" InputTransparent="False" Scale="1" Padding="0,-10,0,0" >
+        <StackLayout IsClippedToBounds="True" InputTransparent="False" Scale="1" Padding="0,-20,0,0" Margin="10,0,10,10" >
             <StackLayout HorizontalOptions="Center" Grid.Row="1"  >
-                <Image Source="fox.png" HorizontalOptions="Start" VerticalOptions="End"  >
+                <Image Source="fox.png" HorizontalOptions="Start" VerticalOptions="End" Margin="0,0,0,-10"  >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnImgClick" NumberOfTapsRequired="1" />
                     </Image.GestureRecognizers>

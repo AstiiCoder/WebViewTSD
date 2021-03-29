@@ -17,11 +17,11 @@ namespace WebViewSample
             //Загружаем параметры - настройки приложения
             if (Params.CurrentServer == "")
                 {
-                    Params.CurrentServer = Preferences.Get("CurrentServer", "http://ts-tsd/tsd/");
-                    _ServerPathEntry.Text = Params.CurrentServer;
+                    Params.CurrentServer = Preferences.Get("CurrentServer", "http://ts-tsd/tsd/");                    
                 }
+            _ServerPathEntry.Text = Params.CurrentServer;
             Params.ScannerLogin = Preferences.Get("ScannerLogin", "");
-            _Login.Text = Params.ScannerLogin;
+            //_Login.Text = Params.ScannerLogin;
             Params.Page = Preferences.Get("Page", "");
             _PageEntry.Text = Params.Page;
 
@@ -55,13 +55,13 @@ namespace WebViewSample
             }
 
             string ServerPath = _ServerPathEntry.Text;
-            string Login = _Login.Text;
+            //string Login = _Login.Text;
             string Page = _PageEntry.Text; 
 
             Preferences.Set("CurrentServer", ServerPath);
             Params.CurrentServer = ServerPath;
-            Preferences.Set("ScannerLogin", Login);
-            Params.ScannerLogin = Login;
+            //Preferences.Set("ScannerLogin", Login);
+            //Params.ScannerLogin = Login;
             Preferences.Set("Page", Page);
             Params.Page = Page;
 

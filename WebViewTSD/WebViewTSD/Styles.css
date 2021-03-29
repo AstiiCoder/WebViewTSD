@@ -3,7 +3,7 @@
 }
 
 stacklayout {
-    margin: 15;
+    margin: 10;
     padding: 10;
 }
 
@@ -31,7 +31,7 @@ stacklayout .buttonParam {
 } 
 
 #header {
-    font-size: 32;
+    font-size: 26;
     font-weight: bold;
 }
 

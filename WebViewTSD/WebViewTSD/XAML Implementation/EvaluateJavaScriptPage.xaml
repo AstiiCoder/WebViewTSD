@@ -14,10 +14,6 @@
             <Label Text="Раздел: " />
             <Entry x:Name="_PageEntry" Text="" WidthRequest="200" />
         </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Логин:   " />
-            <Entry x:Name="_Login" Text="" WidthRequest="200" />
-        </StackLayout>
         <Button x:Name="_callSaveParamsButton" Text="Сохранить" Clicked="OnSaveParamsClicked" />
         <Label Text="Сетевое окружение" FontAttributes="Bold" HorizontalOptions="Center" />
         <Button x:Name="_callTestConnectivityButton" Text="Проверить соединение" Clicked="TestConnectivity" />

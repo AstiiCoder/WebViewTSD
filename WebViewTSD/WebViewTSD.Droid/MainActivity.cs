@@ -18,12 +18,10 @@ namespace WebViewSample.Droid
             Window.SetStatusBarColor(Android.Graphics.Color.DodgerBlue);
             base.OnCreate(bundle);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
+            global::Xamarin.Forms.Forms.Init(this, bundle);     
             LoadApplication(new App());
 
-            
-
-        }
+            }
     }
 }
 
