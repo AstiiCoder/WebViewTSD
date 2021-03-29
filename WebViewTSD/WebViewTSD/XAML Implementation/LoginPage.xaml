@@ -7,7 +7,7 @@
     </ContentPage.Resources>
     <NavigationPage.TitleView>
         <Label Text="Авторизация" StyleClass="labelHeader" HorizontalOptions="Center"/>
-    </NavigationPage.TitleView>
+    </NavigationPage.TitleView> 
     <ContentPage.Content>
         <StackLayout IsClippedToBounds="True" InputTransparent="False" Scale="1" Padding="0,-10,0,0" >
             <StackLayout HorizontalOptions="Center" Grid.Row="1"  >

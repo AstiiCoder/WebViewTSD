@@ -87,9 +87,8 @@ namespace WebViewSample
 
 				//Application.MainPage = tabs;
 				Params.IsUserLoggedIn = true;
-				Navigation.InsertPageBefore(tabs, this);				
-				await Navigation.PopAsync();
-				NavigationPage.SetHasNavigationBar(this, false);
+				Navigation.InsertPageBefore(tabs, this);	
+				await Navigation.PopAsync();				
 				}
 			else
 				{

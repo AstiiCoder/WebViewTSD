@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="WebViewSample.InAppBrowserXaml"
              Title="Документы">
-	<StackLayout Margin="20">
-		<StackLayout Orientation="Horizontal">
-			<Button Text="Назад" HorizontalOptions="StartAndExpand" Clicked="OnBackButtonClicked" />
+    <StackLayout Margin="10,0">
+		<!--<StackLayout Orientation="Horizontal">
+            <Button Text="Назад" HorizontalOptions="StartAndExpand" Clicked="OnBackButtonClicked" />
             <Button Text="Обновить" HorizontalOptions="CenterAndExpand" Clicked="OnReloadButtonClicked" />
-			<Button Text="Далее" HorizontalOptions="EndAndExpand" Clicked="OnForwardButtonClicked" />
-		</StackLayout>
+			<Button Text="Далее" HorizontalOptions="EndAndExpand" Clicked="OnForwardButtonClicked" /> 
+		</StackLayout>-->
 		<!-- WebView needs to be given height and width request within layouts to render. -->
 		<WebView x:Name="webView" WidthRequest="1000" HeightRequest="1000" /> 
 	</StackLayout>

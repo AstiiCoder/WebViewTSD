@@ -22,7 +22,7 @@ namespace WebViewSample
 			}
 
 		public LinkToInAppXaml ()
-		{			
+		{
 			//DependencyService.Get<IStatusBar>().HideStatusBar();
 			InitializeComponent ();
 		}

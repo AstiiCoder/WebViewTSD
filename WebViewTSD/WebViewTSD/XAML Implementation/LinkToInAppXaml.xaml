@@ -4,7 +4,7 @@
              x:Class="WebViewSample.LinkToInAppXaml"
              Title="Сканирование марок"
              NavigationPage.HasNavigationBar="False">
-	<StackLayout Margin="20">
+    <StackLayout Margin="10,0">
 		<Label Text="Режимы работы" />
 		<Button Text="Выбор документов" Clicked="navButtonClicked" />
 	</StackLayout>

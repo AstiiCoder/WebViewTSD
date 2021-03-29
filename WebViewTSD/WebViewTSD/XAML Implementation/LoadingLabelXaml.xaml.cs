@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.IO;
+using Xamarin.Forms;
 
 namespace WebViewSample
 {
@@ -7,7 +8,12 @@ namespace WebViewSample
         public LoadingLabelXaml()
         {
             InitializeComponent();
-        }
+
+            //Определяемся: где лежит справка
+            string HelpHtml = Path.Combine(Params.CurrentServer, "help.html");
+            _webView.Source = HelpHtml;
+
+            }
 
         /// <summary>
         /// Called when the webview starts navigating. Displays the loading label.
