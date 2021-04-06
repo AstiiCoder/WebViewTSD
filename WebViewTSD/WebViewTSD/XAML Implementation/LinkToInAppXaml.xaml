@@ -7,5 +7,6 @@
     <StackLayout Margin="10,0">
 		<Label Text="Режимы работы" />
 		<Button Text="Выбор документов" Clicked="navButtonClicked" />
+        <Button Text="Настройки" Clicked="navOptionsClicked" />
 	</StackLayout>
 </ContentPage>

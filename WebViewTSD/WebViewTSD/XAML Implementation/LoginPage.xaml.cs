@@ -108,15 +108,16 @@ namespace WebViewSample
 
 				//Application.MainPage = tabs;
 				Params.IsUserLoggedIn = true;
-				Navigation.InsertPageBefore(tabs, this);
-				await Navigation.PopAsync();				
+				Navigation.InsertPageBefore(tabs, this);				
+				await Navigation.PopAsync();
+
 				}
 			else
 				{
 				messageLabel.Text = "Неправильный логин/пароль";
 				passwordEntry.Text = string.Empty;
 				//Чтобы проинформировать ещё и динамическим сообщением
-				this.DisplayToastAsync("Неправильный логин/пароль", 2000);
+				await this.DisplayToastAsync("Неправильный логин/пароль", 2000);
 				}
 			}
 

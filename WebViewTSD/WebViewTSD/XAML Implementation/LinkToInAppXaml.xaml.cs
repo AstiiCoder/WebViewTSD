@@ -25,8 +25,8 @@ namespace WebViewSample
 		public LinkToInAppXaml ()
 		{
 			//DependencyService.Get<IStatusBar>().HideStatusBar();
-			InitializeComponent ();
-		}
+			InitializeComponent ();			
+			}
 
 		/// <summary>
 		/// Demonstrates how to load a view for web browsing within an app.
@@ -49,6 +49,11 @@ namespace WebViewSample
             //Непосредствеено, переход к странице
 			await Navigation.PushAsync(new InAppBrowserXaml(IndexHtml));
 			}
-	}
+
+        private void navOptionsClicked(object sender, EventArgs e)
+            {
+
+            }
+        }
 }
 

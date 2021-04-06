@@ -60,6 +60,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashActivity.cs" />
     <Compile Include="StatusBarHelper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +79,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\fox.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\fox.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\fox.png" />
+    <AndroidResource Include="Resources\drawable\Splash.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebViewTSD\WebViewTSD.csproj">
