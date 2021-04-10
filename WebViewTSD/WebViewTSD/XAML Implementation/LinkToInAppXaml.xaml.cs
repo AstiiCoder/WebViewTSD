@@ -25,8 +25,9 @@ namespace WebViewSample
 		public LinkToInAppXaml ()
 		{
 			//DependencyService.Get<IStatusBar>().HideStatusBar();
-			InitializeComponent ();			
-			}
+			InitializeComponent();
+            BackgroundColor = Color.FromHex("#2196F3");
+		}
 
 		/// <summary>
 		/// Demonstrates how to load a view for web browsing within an app.
@@ -48,12 +49,46 @@ namespace WebViewSample
 				//IndexHtml = "http://10.0.2.2/FoxWebApp2/ListNakls.htm";
             //Непосредствеено, переход к странице
 			await Navigation.PushAsync(new InAppBrowserXaml(IndexHtml));
+			//Подсказка, что нужно делать дальше
+			await this.DisplayToastAsync("Выберите документ", 1000);
 			}
 
-        private void navOptionsClicked(object sender, EventArgs e)
+        async private void navOptionsClicked(object sender, EventArgs e)
             {
+			await Navigation.PushAsync(new EvaluateJavaScriptPage());
+			}
 
-            }
+        async private void retButtonClicked(object sender, EventArgs e)
+            {
+			if (Params.CurrentServer == "")
+				{
+				Params.CurrentServer = Preferences.Get("CurrentServer", "http://ts-tsd/tsd");
+				}
+			//Определяемся: что открываем изначально
+			string IndexHtml = Path.Combine(Params.CurrentServer, Params.Page);
+			//Возрат имеет параметр ret
+			IndexHtml += "?ret=1";
+
+			//Непосредствеено, переход к странице
+			await Navigation.PushAsync(new InAppBrowserXaml(IndexHtml));
+			//Подсказка, что нужно делать дальше
+			await this.DisplayToastAsync("Выберите документ", 1000);
+			}
+
+        async private void editButtonClicked(object sender, EventArgs e)
+            {
+			if (Params.CurrentServer == "")
+				{
+				Params.CurrentServer = Preferences.Get("CurrentServer", "http://ts-tsd/tsd");
+				}
+			//Определяемся: что открываем изначально
+			string IndexHtml = Path.Combine(Params.CurrentServer, Params.Page);
+			//Возрат имеет параметр ret
+			IndexHtml += "?edit=1";
+
+			//Непосредствеено, переход к странице
+			await Navigation.PushAsync(new InAppBrowserXaml(IndexHtml));
+			}
         }
 }
 

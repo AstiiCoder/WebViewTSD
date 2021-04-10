@@ -4,6 +4,9 @@
          parent="android:Theme">
 		<item name="android:windowBackground">@drawable/splash</item>
 		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowFullscreen">true</item>
+		<item name="android:windowContentOverlay">@null</item> 
+		<item name="android:windowActionBar">false</item> 
 	</style>
 	<style name="MainTheme" parent="MainTheme.Base">
 	</style>	

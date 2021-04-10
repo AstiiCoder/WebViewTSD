@@ -19,6 +19,7 @@ namespace WebViewTSD.Droid
         {
         protected override void OnCreate(Bundle savedInstanceState)
             {
+            // Про Splash: https://www.c-sharpcorner.com/article/creating-a-splash-screen-in-xamarin-forms/
             base.OnCreate(savedInstanceState);
             System.Threading.Thread.Sleep(3000);
             StartActivity(typeof(MainActivity));

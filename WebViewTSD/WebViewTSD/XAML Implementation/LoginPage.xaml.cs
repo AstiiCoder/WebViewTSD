@@ -30,6 +30,7 @@ namespace WebViewSample
 				Username = usernameEntry.Text,
 				Password = passwordEntry.Text
 				};
+			messageLabel.Text = "попытка соединения...";
 
 			bool isValid = false;
 			HttpClient client = new HttpClient();
@@ -87,29 +88,32 @@ namespace WebViewSample
             if (isValid)
 				{
 				messageLabel.Text = "";
-				var tabs = new TabbedPage();
-				var navPage = new NavigationPage { Title = "Сканир." };
-				tabs.Children.Add(navPage);
+				await Navigation.PushAsync(new LinkToInAppXaml());
+				//Подсказка, что нужно делать дальше
+				await this.DisplayToastAsync("Выберите режим сканирования", 2000);
 
-				bool useXaml = true; //Не будем использовать вариант без Xaml
+				//var tabs = new TabbedPage();
+				//var navPage = new NavigationPage { Title = "Сканир." };
+				//tabs.Children.Add(navPage);
 
-				//Странички навигации
-				if (useXaml)
-					{
-					await navPage.PushAsync(new LinkToInAppXaml());
-					tabs.Children.Add(new LoadingLabelXaml());
-					tabs.Children.Add(new EvaluateJavaScriptPage());
-					}
-				else
-					{
-					await navPage.PushAsync(new LinkToInAppCode());
-					tabs.Children.Add(new LoadingLabelCode());
-					}
+				//bool useXaml = true; //Не будем использовать вариант без Xaml
 
-				//Application.MainPage = tabs;
-				Params.IsUserLoggedIn = true;
-				Navigation.InsertPageBefore(tabs, this);				
-				await Navigation.PopAsync();
+				////Странички навигации
+				//if (useXaml)
+				//	{
+				//	await navPage.PushAsync(new LinkToInAppXaml());
+				//	tabs.Children.Add(new LoadingLabelXaml());
+				//	tabs.Children.Add(new EvaluateJavaScriptPage());
+				//	}
+				//else
+				//	{
+				//	await navPage.PushAsync(new LinkToInAppCode());
+				//	tabs.Children.Add(new LoadingLabelCode());
+				//	}
+
+				//Params.IsUserLoggedIn = true;
+				//Navigation.InsertPageBefore(tabs, this);				
+				//await Navigation.PopAsync();
 
 				}
 			else
@@ -159,28 +163,31 @@ namespace WebViewSample
 
         private async void OnImgClick(object sender, EventArgs e)
             {
-			var tabs = new TabbedPage();
-			var navPage = new NavigationPage { Title = "Сканир." };
-			tabs.Children.Add(navPage);
+			await Navigation.PushAsync(new LinkToInAppXaml());
+			//Подсказка, что нужно делать дальше
+			await this.DisplayToastAsync("Выберите режим сканирования", 2000);
+			//var tabs = new TabbedPage();
+			//var navPage = new NavigationPage { Title = "Сканир." };
+			//tabs.Children.Add(navPage);
 
-			bool useXaml = true; 
+			//bool useXaml = true; 
 
-			//Странички навигации
-			if (useXaml)
-				{
-				await navPage.PushAsync(new LinkToInAppXaml());
-				tabs.Children.Add(new LoadingLabelXaml());
-				tabs.Children.Add(new EvaluateJavaScriptPage());
-				}
-			else
-				{
-				await navPage.PushAsync(new LinkToInAppCode());
-				tabs.Children.Add(new LoadingLabelCode());
-				}
+			////Странички навигации
+			//if (useXaml)
+			//	{
+			//	await navPage.PushAsync(new LinkToInAppXaml());
+			//	tabs.Children.Add(new LoadingLabelXaml());
+			//	tabs.Children.Add(new EvaluateJavaScriptPage());
+			//	}
+			//else
+			//	{
+			//	await navPage.PushAsync(new LinkToInAppCode());
+			//	tabs.Children.Add(new LoadingLabelCode());
+			//	}
 
-			Params.IsUserLoggedIn = true;
-			Navigation.InsertPageBefore(tabs, this);
-			await Navigation.PopAsync();
+			//Params.IsUserLoggedIn = true;
+			//Navigation.InsertPageBefore(tabs, this);
+			//await Navigation.PopAsync();
 			}
         }
     }

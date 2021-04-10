@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="WebViewSample.EvaluateJavaScriptPage" 
-             Title="Настройки"
-             NavigationPage.HasNavigationBar="False">
+             Title="Меню"
+             NavigationPage.HasNavigationBar="True">
     <StackLayout Margin="10,10,10,0">
         <Label Text="Параметры приложения" FontAttributes="Bold" HorizontalOptions="Center" />
         <StackLayout Orientation="Horizontal">

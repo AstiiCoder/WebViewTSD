@@ -5,8 +5,10 @@
              Title="Сканирование марок"
              NavigationPage.HasNavigationBar="False">
     <StackLayout Margin="10,0">
-		<Label Text="Режимы работы" />
-		<Button Text="Выбор документов" Clicked="navButtonClicked" />
+		<Label Text="Главное меню" />
+		<Button Text="Отгрузка" Clicked="navButtonClicked" />
+        <Button Text="Возврат" Clicked="retButtonClicked" />
+        <Button Text="Правка" Clicked="editButtonClicked" />
         <Button Text="Настройки" Clicked="navOptionsClicked" />
 	</StackLayout>
 </ContentPage>
