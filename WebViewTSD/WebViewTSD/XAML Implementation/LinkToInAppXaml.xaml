@@ -10,5 +10,6 @@
         <Button Text="Возврат" Clicked="retButtonClicked" />
         <Button Text="Правка" Clicked="editButtonClicked" />
         <Button Text="Настройки" Clicked="navOptionsClicked" />
+        <Button Text="Закрыть" Clicked="exitButtonClicked" />
 	</StackLayout>
 </ContentPage>

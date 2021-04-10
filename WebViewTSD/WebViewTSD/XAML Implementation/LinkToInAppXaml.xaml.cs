@@ -1,6 +1,7 @@
 ﻿using Android.OS;
 using System;
 using System.IO;
+using System.Linq;
 using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -27,7 +28,17 @@ namespace WebViewSample
 			//DependencyService.Get<IStatusBar>().HideStatusBar();
 			InitializeComponent();
             BackgroundColor = Color.FromHex("#2196F3");
-		}
+
+            if (Navigation != null && Navigation.NavigationStack.Count() > 0) 
+				{ 
+				var existingPages = Navigation.NavigationStack.ToList(); 
+				foreach (var page in existingPages) 
+					{
+					Navigation.RemovePage(page); 
+					} 
+				}
+
+        }
 
 		/// <summary>
 		/// Demonstrates how to load a view for web browsing within an app.
@@ -88,6 +99,11 @@ namespace WebViewSample
 
 			//Непосредствеено, переход к странице
 			await Navigation.PushAsync(new InAppBrowserXaml(IndexHtml));
+			}
+
+        private void exitButtonClicked(object sender, EventArgs e)
+            {
+			Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
 			}
         }
 }

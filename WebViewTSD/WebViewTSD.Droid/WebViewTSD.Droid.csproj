@@ -68,8 +68,6 @@
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
   </ItemGroup>
@@ -80,6 +78,11 @@
     <AndroidResource Include="Resources\drawable-xhdpi\fox.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\fox.png" />
     <AndroidResource Include="Resources\drawable\Splash.png" />
+    <AndroidResource Include="Resources\drawable\goback.png" />
+    <AndroidResource Include="Resources\drawable\refresh.png" />
+    <AndroidResource Include="Resources\drawable\icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\icon_tsd.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebViewTSD\WebViewTSD.csproj">

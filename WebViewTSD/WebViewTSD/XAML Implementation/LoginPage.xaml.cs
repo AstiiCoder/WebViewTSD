@@ -166,6 +166,7 @@ namespace WebViewSample
 			await Navigation.PushAsync(new LinkToInAppXaml());
 			//Подсказка, что нужно делать дальше
 			await this.DisplayToastAsync("Выберите режим сканирования", 2000);
+
 			//var tabs = new TabbedPage();
 			//var navPage = new NavigationPage { Title = "Сканир." };
 			//tabs.Children.Add(navPage);

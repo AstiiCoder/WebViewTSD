@@ -10,9 +10,20 @@
 			<Button Text="Далее" HorizontalOptions="EndAndExpand" Clicked="OnForwardButtonClicked" /> 
 		</StackLayout>-->
 		<!-- WebView needs to be given height and width request within layouts to render. -->
-        <RefreshView IsRefreshing="{Binding IsRefreshing}"
-             Command="{Binding RefreshCommand}">
+        <SwipeView>
+            <SwipeView.LeftItems>
+                <SwipeItems>
+                    <SwipeItem Text="Обновить"
+                       IconImageSource="refresh.png"
+                       BackgroundColor="#f29933"
+                       Invoked="OnRefreshSwipeItemInvoked" />
+                    <SwipeItem Text="Назад"
+                       IconImageSource="goback.png"
+                       BackgroundColor="#FF4081"
+                       Invoked="OnReloadButtonClicked" />
+                </SwipeItems>
+            </SwipeView.LeftItems>
             <WebView x:Name="webView" WidthRequest="1000" HeightRequest="1000" Background="#2196F3"/>
-        </RefreshView>
+        </SwipeView>
     </StackLayout>
 </ContentPage>

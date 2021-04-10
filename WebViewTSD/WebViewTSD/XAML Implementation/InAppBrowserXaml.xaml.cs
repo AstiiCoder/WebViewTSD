@@ -47,6 +47,11 @@ namespace WebViewSample
                 webView.GoForward();
             }
         }
-    }
+
+        private void OnRefreshSwipeItemInvoked(object sender, EventArgs e)
+            {
+            webView.Reload();
+            }
+        }
 }
 
