@@ -53,6 +53,11 @@ namespace WebViewSample
                 {
 				Params.CurrentServer = Preferences.Get("CurrentServer", "http://ts-tsd/tsd");
                 }
+			if (Params.Page == "")
+				{
+				Params.Page = Preferences.Get("Page", "");
+				}
+				
 			//Определяемся: что открываем изначально
 			string IndexHtml = Path.Combine(Params.CurrentServer, Params.Page);
 			//Для тестов
@@ -75,6 +80,10 @@ namespace WebViewSample
 				{
 				Params.CurrentServer = Preferences.Get("CurrentServer", "http://ts-tsd/tsd");
 				}
+			if (Params.Page == "")
+				{
+				Params.Page = Preferences.Get("Page", "");
+				}
 			//Определяемся: что открываем изначально
 			string IndexHtml = Path.Combine(Params.CurrentServer, Params.Page);
 			//Возрат имеет параметр ret
@@ -91,6 +100,10 @@ namespace WebViewSample
 			if (Params.CurrentServer == "")
 				{
 				Params.CurrentServer = Preferences.Get("CurrentServer", "http://ts-tsd/tsd");
+				}
+			if (Params.Page == "")
+				{
+				Params.Page = Preferences.Get("Page", "");
 				}
 			//Определяемся: что открываем изначально
 			string IndexHtml = Path.Combine(Params.CurrentServer, Params.Page);
