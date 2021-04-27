@@ -16,11 +16,12 @@
                     <SwipeItem Text="Обновить"
                        IconImageSource="refresh.png"
                        BackgroundColor="#f29933"
-                       Invoked="OnRefreshSwipeItemInvoked" />
+                       Invoked="OnRefreshSwipeItemInvoked"
+                       Clicked="OnReloadButtonClicked" />
                     <SwipeItem Text="Назад"
                        IconImageSource="goback.png"
                        BackgroundColor="#FF4081"
-                       Invoked="OnReloadButtonClicked" />
+                       Clicked="OnBackButtonClicked" />
                 </SwipeItems>
             </SwipeView.LeftItems>
             <WebView x:Name="webView" WidthRequest="1000" HeightRequest="1000" Background="#2196F3"/>
