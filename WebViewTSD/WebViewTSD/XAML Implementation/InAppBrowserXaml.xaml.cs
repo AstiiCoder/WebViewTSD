@@ -1,5 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
+using Android.Views;
+using Xamarin.CommunityToolkit.Extensions;
 
 namespace WebViewSample
 {

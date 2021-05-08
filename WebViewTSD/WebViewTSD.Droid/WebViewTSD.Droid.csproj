@@ -45,6 +45,8 @@
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <BundleAssemblies>false</BundleAssemblies>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <DebugSymbols>true</DebugSymbols>
+    <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Essentials">
@@ -88,6 +90,11 @@
     <AndroidResource Include="Resources\drawable\icon.png" />
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\icon_tsd.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_tsd.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\goback.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\refresh.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\goback.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\refresh.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebViewTSD\WebViewTSD.csproj">

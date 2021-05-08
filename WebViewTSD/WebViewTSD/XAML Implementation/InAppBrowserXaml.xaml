@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="WebViewSample.InAppBrowserXaml"
              Title="Меню">
-    <StackLayout Margin="10,0">
+    <StackLayout Margin="10,0" >
 		<!--<StackLayout Orientation="Horizontal">
             <Button Text="Назад" HorizontalOptions="StartAndExpand" Clicked="OnBackButtonClicked" />
             <Button Text="Обновить" HorizontalOptions="CenterAndExpand" Clicked="OnReloadButtonClicked" />
@@ -24,7 +24,7 @@
                        Clicked="OnBackButtonClicked" />
                 </SwipeItems>
             </SwipeView.LeftItems>
-            <WebView x:Name="webView" WidthRequest="1000" HeightRequest="1000" Background="#2196F3"/>
+            <WebView x:Name="webView" WidthRequest="1000" HeightRequest="1000" Background="#2196F3" />
         </SwipeView>
     </StackLayout>
 </ContentPage>
