@@ -1,5 +1,5 @@
 # WebViewTSD
 
-![Screenshort1](https://github.com/AstiiCoder/WebViewTSD/blob/main/screen5.png)
-![Screenshort1](https://github.com/AstiiCoder/WebViewTSD/blob/main/screen6.png)
-![Screenshort1](https://github.com/AstiiCoder/WebViewTSD/blob/main/screen7.png)
+![Screenshort1](https://github.com/AstiiCoder/WebViewTSD/master/Images/screen5.png)
+![Screenshort1](https://github.com/AstiiCoder/WebViewTSD/master/Images/screen6.png)
+![Screenshort1](https://github.com/AstiiCoder/WebViewTSD/master/Images/screen7.png)
